@@ -1,0 +1,38 @@
+{
+  "name": "job-finder",
+  "version": "1.0.0",
+  "description": "Portal para programadores encontrarem e anunciarem vagas de trabalho.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pctaliberti-l/job-finder.git"
+  },
+  "keywords": [
+    "dev",
+    "jobs",
+    "jobs",
+    "trabalho",
+    "vagas",
+    "de",
+    "trabalho"
+  ],
+  "author": "Paulo C. Taliberti L. (pctaliberti-l)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pctaliberti-l/job-finder/issues"
+  },
+  "homepage": "https://github.com/pctaliberti-l/job-finder#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "sequelize": "^6.3.3",
+    "sqlite3": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
