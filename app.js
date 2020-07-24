@@ -22,6 +22,9 @@ app.set("views", path.join(__dirname, "views"));
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+// static folder
+app.use(express.static(path.join(__dirname, "public")));
+
 // conexão db
 db.authenticate()
   .then(() => {
@@ -33,7 +36,7 @@ db.authenticate()
 
 // rotas
 app.get(`/`, (req, res) => {
-  res.send("Está funcionando.");
+  res.render("index");
 });
 
 // rotas job
