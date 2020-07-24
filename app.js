@@ -7,6 +7,8 @@ const app = express();
 const path = require("path");
 const bodyParser = require("body-parser");
 const Job = require("./models/Job");
+const Sequelize = require("sequelize");
+const Op = Sequelize.Op;
 // banco de dados
 const db = require("./db/connection");
 const PORT = 3000;
@@ -37,11 +39,30 @@ db.authenticate()
 
 // rotas
 app.get(`/`, (req, res) => {
-  Job.findAll({ order: [["createdAt", "DESC"]] }).then((jobs) => {
-    res.render("index", {
-      jobs,
-    });
-  });
+  let search = req.query.job;
+  let query = "%" + search + "%"; // PH -> PHP, Word -> Wordpress...
+
+  if (!search) {
+    Job.findAll({ order: [["createdAt", "DESC"]] })
+      .then((jobs) => {
+        res.render("index", {
+          jobs,
+        });
+      })
+      .catch((err) => console.log(err));
+  } else {
+    Job.findAll({
+      where: { title: { [Op.like]: query } },
+      order: [["createdAt", "DESC"]],
+    })
+      .then((jobs) => {
+        res.render("index", {
+          jobs,
+          search,
+        });
+      })
+      .catch((err) => console.log(err));
+  }
 });
 
 // rotas job
