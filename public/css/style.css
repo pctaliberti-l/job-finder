@@ -83,6 +83,7 @@
   color: #fff;
   background-color: #f03e3e;
   border: 1px solid transparent;
+  min-width: 100px;
 }
 
 /* lista */
