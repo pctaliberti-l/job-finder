@@ -6,6 +6,7 @@ const exphbs = require("express-handlebars");
 const app = express();
 const path = require("path");
 const bodyParser = require("body-parser");
+const Job = require("./models/Job");
 // banco de dados
 const db = require("./db/connection");
 const PORT = 3000;
@@ -36,7 +37,11 @@ db.authenticate()
 
 // rotas
 app.get(`/`, (req, res) => {
-  res.render("index");
+  Job.findAll({ order: [["createdAt", "DESC"]] }).then((jobs) => {
+    res.render("index", {
+      jobs,
+    });
+  });
 });
 
 // rotas job
