@@ -13,3 +13,9 @@
 
 - Página principal/home:
   ![Página principal](/assets/home.png)
+
+- Página de busca:
+  ![Página de busca](/assets/busca.png)
+
+- Página para adicionar vagas:
+  ![Página adicionar vagas](/assets/vagas.png)
