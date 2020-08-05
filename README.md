@@ -10,6 +10,7 @@
 - Requerimentos para utilizar:
 
   - _NodeJs_ instalado na máquina com o módulo _nodemon_
+  - Executar o projeto com _npm run dev_
 
 - Página principal/home:
   ![Página principal](/assets/home.png)
